@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios" />
+        <title>DNO037</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <p><a href="index.html">Portada</a> <a href="peliculas.html">Películas</a> <a href="ganancias.html" class="active">Ganancias</a></p>
+            </nav>
+            <main>
+                <canvas id="grafico" height="50" width="100">
+                    <!--acá se mete el mapa-->
+                </canvas>
+            </main>
+            <footer>
+                <p><a href="#">Emilia Castillo</a> <a href="#">DNO037</a></p>
+            </footer>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+    <script>
+var ctx = document.getElementById('grafico').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['La primera', 'La segunda', 'La tercera', 'La cuarta', 'La quinta', 'La sexta', 'La séptima parte 1', 'La séptima parte 2'],
+        datasets: [{
+            label: 'Muerte de personajes en cada película',
+            data: [7, 3, 1, 8, 9, 11, 4, 29],
+            backgroundColor: 'rgba(186, 28, 28, 0.9)',
+            borderWidth: 0
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+    </body>
+</html>
